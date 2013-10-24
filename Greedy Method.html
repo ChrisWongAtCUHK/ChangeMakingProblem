@@ -1,0 +1,130 @@
+
+<!-- saved from url=(0047)http://www.csie.ntnu.edu.tw/~u91029/Greedy.html -->
+<html lang="zh-TW"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><link rel="stylesheet" href="style.css">
+<title>演算法筆記 - Greedy Method</title></head><body>
+<p class="b">Change-Making Problem</p>
+<p class="r">程度★★　難度★★</p>
+</div><div class="c">
+<p class="t">找錢問題</p>
+<p>你去商店買東西，你掏出了一張百元鈔票，買了一包 23 元的零食。櫃員須找錢給你，但是你希望櫃員找給你的硬幣數目越少越好，如此口袋會輕一點。那麼櫃員會給你幾個硬幣呢？</p>
+<p class="t">演算法（ Cashier's Algorithm ）</p>
+<p>演算法非常直覺。填答案的原則：先找給你面額較高的硬幣。</p>
+<p>時間複雜度是 O(N) ， N 是銅板種類。</p>
+<div class="sh"><div class="bar">&nbsp;</div><ol><li><span class="type">int</span><span>&nbsp;</span><span class="word">price</span><span>[</span><span class="value">5</span><span>]&nbsp;=&nbsp;{</span><span class="value">50</span><span>,&nbsp;</span><span class="value">20</span><span>,&nbsp;</span><span class="value">10</span><span>,&nbsp;</span><span class="value">4</span><span>,&nbsp;</span><span class="value">2</span><span>};&nbsp;&nbsp;</span><span class="comment">//&nbsp;面額由大到小排列</span></li><li>&nbsp;</li><li><span class="keyword">void</span><span>&nbsp;</span><span class="word">cashier</span><span>(</span><span class="type">int</span><span>&nbsp;</span><span class="word">n</span><span>)&nbsp;</span><span class="comment">//&nbsp;n&nbsp;是總共要找的錢。</span></li><li><span>{</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="type">int</span><span>&nbsp;</span><span class="word">c</span><span>&nbsp;=&nbsp;</span><span class="value">0</span><span>;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">for</span><span>&nbsp;(</span><span class="type">int</span><span>&nbsp;</span><span class="word">i</span><span>=</span><span class="value">0</span><span>;&nbsp;</span><span class="word">i</span><span>&lt;</span><span class="value">5</span><span>;&nbsp;++</span><span class="word">i</span><span>)</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">while</span><span>&nbsp;(</span><span class="word">n</span><span>&nbsp;&gt;=&nbsp;</span><span class="word">price</span><span>[</span><span class="word">i</span><span>])</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="word">n</span><span>&nbsp;-=&nbsp;</span><span class="word">price</span><span>[</span><span class="word">i</span><span>];&nbsp;&nbsp;</span><span class="comment">//&nbsp;找了&nbsp;price[i]&nbsp;元</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="word">c</span><span>++;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span></li><li>&nbsp;</li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">if</span><span>&nbsp;(</span><span class="word">n</span><span>&nbsp;!=&nbsp;</span><span class="value">0</span><span>)</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="word">cout</span><span>&nbsp;&lt;&lt;&nbsp;</span><span class="string">"找不出來"</span><span>;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">else</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="word">cout</span><span>&nbsp;&lt;&lt;&nbsp;</span><span class="string">"找了"</span><span>&nbsp;&lt;&lt;&nbsp;</span><span class="word">c</span><span>&nbsp;&lt;&lt;&nbsp;</span><span class="string">"個錢幣"</span><span>;</span></li><li><span>}</span></li></ol></div><textarea style="display: none;">int price[5] = {50, 20, 10, 4, 2};	// 面額由大到小排列
+
+void cashier(int n)	// n 是總共要找的錢。
+{
+	int c = 0;
+	for (int i=0; i&lt;5; ++i)
+		while (n &gt;= price[i])
+		{
+			n -= price[i];	// 找了 price[i] 元
+			c++;
+		}
+
+	if (n != 0)
+		cout &lt;&lt; "找不出來";
+	else
+		cout &lt;&lt; "找了" &lt;&lt; c &lt;&lt; "個錢幣";
+}
+</textarea>
+<div class="sh"><div class="bar">&nbsp;</div><ol><li><span class="type">int</span><span>&nbsp;</span><span class="word">price</span><span>[</span><span class="value">5</span><span>]&nbsp;=&nbsp;{</span><span class="value">50</span><span>,&nbsp;</span><span class="value">20</span><span>,&nbsp;</span><span class="value">10</span><span>,&nbsp;</span><span class="value">4</span><span>,&nbsp;</span><span class="value">2</span><span>};</span></li><li>&nbsp;</li><li><span class="keyword">void</span><span>&nbsp;</span><span class="word">cashier</span><span>(</span><span class="type">int</span><span>&nbsp;</span><span class="word">n</span><span>)</span></li><li><span>{</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="type">int</span><span>&nbsp;</span><span class="word">c</span><span>&nbsp;=&nbsp;</span><span class="value">0</span><span>;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">for</span><span>&nbsp;(</span><span class="type">int</span><span>&nbsp;</span><span class="word">i</span><span>=</span><span class="value">0</span><span>;&nbsp;</span><span class="word">i</span><span>&lt;</span><span class="value">5</span><span>;&nbsp;++</span><span class="word">i</span><span>)</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="word">c</span><span>&nbsp;+=&nbsp;</span><span class="word">n</span><span>&nbsp;/&nbsp;</span><span class="word">price</span><span>[</span><span class="word">i</span><span>];</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="word">n</span><span>&nbsp;%=&nbsp;</span><span class="word">price</span><span>[</span><span class="word">i</span><span>];</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span></li><li>&nbsp;</li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">if</span><span>&nbsp;(</span><span class="word">n</span><span>&nbsp;!=&nbsp;</span><span class="value">0</span><span>)</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="word">cout</span><span>&nbsp;&lt;&lt;&nbsp;</span><span class="string">"找不出來"</span><span>;</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="keyword">else</span></li><li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="word">cout</span><span>&nbsp;&lt;&lt;&nbsp;</span><span class="string">"找了"</span><span>&nbsp;&lt;&lt;&nbsp;</span><span class="word">c</span><span>&nbsp;&lt;&lt;&nbsp;</span><span class="string">"個錢幣"</span><span>;</span></li><li><span>}</span></li></ol></div><textarea style="display: none;">int price[5] = {50, 20, 10, 4, 2};
+
+void cashier(int n)
+{
+	int c = 0;
+	for (int i=0; i&lt;5; ++i)
+	{
+		c += n / price[i];
+		n %= price[i];
+	}
+
+	if (n != 0)
+		cout &lt;&lt; "找不出來";
+	else
+		cout &lt;&lt; "找了" &lt;&lt; c &lt;&lt; "個錢幣";
+}
+</textarea>
+<p class="e">UVa <a href="http://uva.onlinejudge.org/external/1/166.html">166</a></p>
+<p class="t">適用情況（ Pearson's Algorithm ）</p>
+<p>現實生活中，錢幣面額是經過精心設定的，可以安心使用 Cashier's Algorithm 。</p>
+<p>不幸的消息是，並不是任意一種面額組合，都可以使用 Cashier's Algorithm 。要使用 Cashier's Algorithm ，得先經過驗證才行：</p>
+<pre>一、各種價錢都能找，不會有找不出來的情況。
+二、錢幣用量真的是最少的。
+</pre>
+<p>時間複雜度是 O(N^3) 。</p>
+<pre>【問題描述】
+一組錢幣面額 (c1, c2, ..., cn)，幣值大小順序是 c1 &lt; c2 &lt; ... &lt; cn。
+找出不適用貪心法的最小價位 M。也就是 1 ~ M-1 用貪心法是對的。
+正確湊得 M 的最少錢幣用量為 (b1, b2, ..., bn)，稱呼為正確湊法 b 或者 b(M)。
+貪心湊得 M 的最少錢幣用量為 (g1, g2, ..., gn)，稱呼為貪心湊法 g 或者 g(M)。
+
+【性質甲】正確湊法有最佳子結構（包含關係）
+若湊法 x 已經是最佳解，
+則比 x 小的 y 統統都是最佳解（x &gt;= y，每一個對應項都是大於等於）。
+最短路徑截一段還是最短路徑的意思。
+
+【性質乙】貪心湊法是嚴格遞增函數（字典順序關係）
+貪心湊法當中，價錢較大的湊法，字典順序會大於價位較小的湊法。
+（以高項次代表高位數。）
+也就是說 g(X) 函數嚴格遞增，而 b(1 ~ M-1) = g(1 ~ M-1) 也是嚴格遞增。
+
+【性質丙】b(M) 與 g(M) 剛好不相交
+b(M) AND g(M) EQUAL (0, 0, 0, ...., 0)
+b(M) 和 g(M) 對應的項不會同時有值，因為拿掉這些錢幣，M 就可以更小，矛盾。
+這個性質不會用到。
+
+【證明開始】
+令 s 是 b(M) 最小的非零項索引值，t 是 b(M) 最大的非零項索引值。
+也就是 b(M) = (0, ... , 0, bs, ... , bt, 0, ... , 0)，
+bs 與 bt 都大於零，bs 的左邊都是零，bt 的右邊都是零。
+
+【證明步驟一】M 之下限
+貪心湊法總是由較大的面額開始湊。
+湊 M 出錯的時候，一定是拿了比 ct 更大的面額來湊。
+所以 M 至少會有 ct+1 那麼大。M &gt;= ct+1。
+
+【證明步驟二】M 之上限
+正確的湊 M 不會用到 ct+1，正確的湊 (M - cs) 當然也不會用到 ct+1。【性質甲】
+湊 (M - cs) 時貪心也會對。【M的前提】
+貪心湊法總是由較大的面額開始湊。
+沒有用到 ct+1，表示 (M - cs) 太小了，所以 (M - cs) &lt; ct+1。
+（也可以推得 (M - ct) &lt; ct+1 ，不過他比較寬鬆，用不到。）
+
+【證明步驟三】觀察 (ct+1 - 1) 的湊法。使用夾擠。
+M &gt; (ct+1 - 1) &gt;= (M - cs)　【步驟一二】
+g(M) &gt; g(ct+1 -1) &gt;= g(M - cs)，如果 g(M) 是對的湊法。【性質乙】
+但是事實上 g(M) 是不對的，所以只好改成相似的：
+b(M) &gt; g(ct+1 - 1) &gt;= b(M - cs)
+
+【步驟三補充】證明 b(M) &gt; g(ct+1 - 1 - ct) 在第 t 項加一
+因為 b(M - ct) = g(M - ct)   &gt;   b(ct+1 - 1 - ct) = g(ct+1 - 1 - ct)
+剛好 ct 是最大的非零項，所以會滿足【逆向性質甲】，故在第 t 項加一即得證。
+剛好 ct 是最大的非零項，也滿足貪心湊法的規則，
+所以 g(ct+1 - 1 - ct) 在第 t 項加一，就正是 g(ct+1 - 1) 了。
+
+【證明步驟四】
+b(M) 與 b(M - cs) 幾乎一樣。【性質甲】【M的前提】
+
+        b(M)        = ( ..., 0 , gs    , ... , gt, 0 , ... )
+     &gt;  g(ct+1 - 1) = ( ???, ? , gs - 1, ... , gt, 0 , ... )
+     &gt;= b(M - cs)   = ( ..., 0 , gs - 1, ... , gt, 0 , ... )
+
+g(ct+1 - 1) 被夾在中間，根據字典順序關係【性質乙】，從第 s 項以上都是確定值。
+反過來說，求出 g(ct+1 - 1)，就可以嘗試推理出 b(M) 和 b(M - cs) 的值。
+
+【演算法】
+M = +oo
+for i = 1 to n
+    算 g(ci+1 - 1) = b(ci+1 - 1)。  // 一定是對的湊法。
+    for j = 1 to i                  // 窮舉第 s 項的位置。
+      算 b(X)，讓 g(ci+1 - 1) 第 j-1 項以下都變成零，讓第 j 項加一，即得。
+      算 X。
+      算 g(X)。
+      if g(X) 與 b(X) 的錢幣用量相同（項次不同沒關係）
+          X可以湊出正確值，不是我們要的。不做任何事。
+      else
+          更新 M，M = min(M, X)。
+return M
+</pre>
+</body></html>

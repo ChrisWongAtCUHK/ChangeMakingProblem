@@ -1,0 +1,312 @@
+﻿body {
+font-size: 14pt;
+font-family: "Palatino Linotype", "Palatino", "Times New Roman",
+             "Microsoft JhengHei", "微軟正黑體", "Apple LiSung Light";
+color: black;
+background-color: #EFEFEF;
+background-image: url(bg.gif);
+background-position: top right;
+background-repeat: repeat;
+background-attachment: fixed;
+text-align: left;
+margin: .5em auto .5em auto;
+padding: 0;
+}
+
+a {
+color: brown;
+text-decoration: underline;
+target: current none;
+}
+a:hover {color: darkred;}
+
+/* article */
+.a {
+display: block;
+overflow: hidden;
+text-align: left;
+line-height: 1.5em;
+color: black;
+background-color: #EFEFEF;
+border: 1px solid gray;
+border-radius: 128px / 2px;
+width: 36em;
+height: auto;
+margin: .5em 0 .5em 16em;
+padding: 2px;
+}
+
+/* header */
+.h {
+display: block;
+overflow: hidden;
+color: #EFEFEF;
+background-image: linear-gradient(0deg, rgba(52,52,52,1.0), rgba(0,0,0,0.5));
+border-radius: 128px / 2px;
+padding: .5em 1em .5em 1em;
+}
+.h a {color: white;}
+.h a:hover {color: orange;}
+
+/* banner */
+.b {
+display: block;
+vertical-align: middle;
+text-indent: 0;
+width: auto;
+margin: 0;
+padding: 0;
+font-size: 18pt;
+font-weight: bold;
+}
+
+/* ranking */
+.r, .w {
+display: block;
+vertical-align: middle;
+text-indent: 0;
+width: auto;
+margin: 0;
+padding: 0;
+font-size: 12pt;
+}
+
+/* poem */
+.w {
+text-align: right;
+}
+
+/* content */
+.c {
+display: block;
+overflow: hidden;
+text-align: left;
+line-height: 1.5em;
+color: black;
+height: auto;
+padding: 0 1em 0 1em;
+}
+
+/* title */
+.t {
+text-indent: 0;
+text-align: left;
+color: black;
+background-color: lightgray;
+border: 1px solid gray;
+border-radius: 2em / 1em;
+width: auto;
+padding: 0 2em 0 2em;
+font-weight: bold;
+}
+
+/* paragraph */
+p {
+text-indent: 2em;
+text-align: left;
+width: 30em;
+padding-left: 2em;
+}
+
+/* math */
+u {text-decoration: overline;}
+sub {vertical-align: -25%;}
+pre sub {margin-right: 2px;}
+
+/* block */
+pre, .pre {
+font-family: "Consolas",
+             "Microsoft JhengHei", "微軟正黑體";
+font-size: 12pt;
+font-weight: normal;
+line-height: 1.5em;
+text-indent: 0;
+color: black;
+border-top: 2px solid lightgray;
+border-bottom: 2px solid lightgray;
+border-radius: 128px / 8px;
+width: auto;
+padding: .5em 0 .5em 0;
+margin-left: 2em;
+margin-right: 2em;
+word-wrap: break-word;
+}
+.pre {
+font-size: 13pt;
+display: block;
+margin-top: -1.5em;
+border: none;
+white-space: pre;
+}
+
+table pre {
+display: block;
+border: 0;
+margin: 0;
+text-align: center;
+width: auto;
+}
+
+/* exercise */
+.e {
+font-size: 12pt;
+font-weight: bold;
+text-indent: 0;
+text-align: left;
+line-height: 2em;
+word-spacing: .5em;
+letter-spacing: 2px;
+color: black;
+background-color: #C7DAC8;
+border: 1px solid lightgray;
+border-radius: 10em / 3em;
+width: auto;
+margin: .5em 2em .5em 2em;
+padding: 0 3em 0 3em;
+word-wrap: break-word;
+}
+.e a {target: new tab;}
+
+/* link */
+.l {
+font-size: 8pt;
+font-style: normal;
+font-weight: normal;
+target: new tab;
+}
+
+/* GWT demo */
+.d {
+text-indent: 0;
+margin-left: 0;
+margin-right: auto;
+}
+
+/* canvas */
+.i {
+text-align: center;
+}
+
+iframe {
+display: block;
+margin: 0 auto 0 auto;
+width: 560;
+height: 315;
+border: none;
+overflow: hidden;
+}
+
+img, object, embed, audio {
+display: block;
+margin: 0 auto 0 auto;
+}
+
+.seq {
+display: block;
+text-align: center;
+}
+.seq img {
+vertical-align: middle;
+display: inline;
+margin: 0;
+}
+
+/* sidebar */
+.m {
+display: block;
+font-family: Verdana;
+font-size: 11pt;
+line-height: 1em;
+text-align: center;
+text-indent: 0;
+color: black;
+background-color: #EFEFEF;
+border: 1px solid gray;
+border-radius: 128px / 2px;
+padding: 2px;
+width: 18.5em;
+min-width: 18.5em;
+max-width: 18.5em;
+height: auto;
+min-height: 97%;
+overflow: hidden;
+vertical-align: top;
+position: fixed;
+left: .5em;
+top: .5em;
+z-index: 1;
+}
+.m a {text-decoration: none; color: inherit;}
+.m a:hover {color: darkred;}
+
+.m .li {
+display: block;
+text-align: left;
+line-height: 1.5em;
+border-bottom: 1px dotted gray;
+height: auto;
+margin: 0;
+padding: .3em .66em .3em .66em;
+}
+
+.m .li:first-child {
+font-size: 16pt;
+font-weight: bold;
+color: #EFEFEF;
+background-image: linear-gradient(0deg, rgba(52,52,52,1.0), rgba(0,0,0,0.5));
+border-radius: 32px / 1px;
+}
+.m .li:first-child a:hover {color: orange;}
+
+
+/* code  */
+.sh {
+display: block;
+overflow: visible;
+font-family: "Lucida Console", "Courier New";
+font-size: 12pt;
+line-height: 1.5em;
+color: black;
+width: auto;
+margin: .5em 2em .5em 2em;
+word-wrap: break-word;
+word-break: break-all;
+}
+
+/* code title */
+.sh .bar {
+color: black;
+background-color: #AAC8AD;
+border: 1px solid lightgray;
+border-bottom: 0;
+border-top-right-radius: 8px;
+border-top-left-radius: 8px;
+padding-left: 1em;
+}
+
+/* line number + content */
+.sh ol {
+background-color: #EFEFEF;
+list-style: decimal outside !important;
+margin: 0 !important;
+border: 1px solid lightgray;
+border-bottom-left-radius: 8px;
+border-bottom-right-radius: 8px;
+}
+
+/* content  */
+.sh ol li {
+margin-left: .5em; /* line number */
+border-top: 1px dotted lightgray;
+}
+.sh ol li:first-child {
+border: 0;
+}
+
+.sh .comment, .sh .comments {color: #008200;}
+.sh .string, .sh .char {color: #069;}
+.sh .macro {color: purple;}
+.sh .type {color: #069;}
+.sh .keyword {color: blue;}
+.sh .word {}
+.sh .value, .sh .hex {color: brown;}
